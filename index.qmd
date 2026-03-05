@@ -1,0 +1,195 @@
+---
+title: ""
+format:
+  html:
+    theme: cosmo
+    toc: false
+    page-layout: full
+    css: styles.css
+---
+
+::: {.hero-banner}
+# BayesHealth
+
+### Bayesian Hub for Health Sciences
+
+A collaborative hub advancing **Bayesian methods for healthcare, biomedical research, and public health**.  
+Connecting researchers, statisticians, clinicians, and students to **learn, collaborate, and apply modern Bayesian strategies**.
+
+[Explore Methods & Research Wings](#research-wings){.btn-primary}
+:::
+
+---
+
+## About BayesHealth
+
+::: {.callout-important appearance="simple"}
+
+**BayesHealth** is a collaborative hub focused on **Bayesian statistical methodology and data-driven health research**.  
+We aim to **demystify Bayesian approaches** and provide a platform for sharing **tools, tutorials, and research insights**.
+
+Bayesian methods allow researchers to:
+
+- Combine **prior knowledge with data** in a principled way  
+- Quantify uncertainty and **make probabilistic predictions**  
+- Build **hierarchical, multilevel, and network models**  
+- Perform **adaptive and sequential analyses** for efficient decision-making  
+
+Our goal is to create a **community for learning, collaboration, and innovation**, making Bayesian methods accessible to all health researchers and data scientists.
+
+:::
+
+---
+
+## Our Mission
+
+- Communicate and **promote Bayesian methodology** for health research  
+- Provide **training, tutorials, and resources** for students and professionals  
+- Foster **collaboration across statistics, epidemiology, medicine, and genomics**  
+- Showcase **methodological innovations and best practices**  
+
+---
+
+## Research Wings {#research-wings}
+
+BayesHealth organizes its research into **four integrated wings**, each focused on a major domain in health sciences where Bayesian methods provide transformative insights.
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-6}
+
+::: {.callout-tip}
+### Bayesian Epidemiology & Global Health
+
+Focuses on **population and public health challenges**, disease dynamics, and global health policy using Bayesian approaches.
+
+**Key topics**
+
+- Spatiotemporal modeling of infectious diseases  
+- Outbreak detection and epidemic forecasting  
+- Cohort studies and survival/time-to-event modeling  
+- Population health risk estimation across regions  
+- Health policy evaluation, resource allocation, and intervention planning  
+- Hierarchical modeling for multi-region/global comparisons
+
+:::
+:::
+
+::: {.g-col-12 .g-col-md-6}
+
+::: {.callout-tip}
+### Bayesian Clinical Trials & Adaptive Designs
+
+Focuses on **designing, monitoring, and analyzing clinical research** to improve patient outcomes and trial efficiency.
+
+**Key topics**
+
+- Adaptive and seamless trial designs  
+- Bayesian dose-finding and platform trials  
+- Interim monitoring, early stopping, and posterior predictive checks  
+- Survival analysis and time-to-event endpoints  
+- Probabilistic benefit–risk assessment for treatments
+
+:::
+:::
+
+::: {.g-col-12 .g-col-md-6}
+
+::: {.callout-tip}
+### Bayesian Health Economics & Decision Science
+
+Focuses on **decision-making under uncertainty**, supporting cost-effective healthcare and policy evaluation.
+
+**Key topics**
+
+- Probabilistic cost-effectiveness analysis  
+- Health technology assessment (HTA)  
+- Value-of-information and risk-benefit modeling  
+- Scenario simulations for healthcare strategies  
+- Resource allocation and policy planning
+
+:::
+:::
+
+::: {.g-col-12 .g-col-md-6}
+
+::: {.callout-tip}
+### Bayesian Genomics, Precision Medicine & Multi-Omics
+
+Focuses on **analyzing complex biological data** to enable personalized medicine and predictive modeling.
+
+**Key topics**
+
+- Genome-wide association studies (GWAS)  
+- Probabilistic gene and protein network modeling  
+- Hierarchical integration of multi-omics datasets  
+- Biomarker discovery and patient stratification  
+- Predictive modeling for individualized treatment and outcomes
+
+:::
+:::
+
+:::
+---
+
+## Collaboration
+
+::: {.callout-info appearance="simple"}
+
+BayesHealth welcomes collaborations and participation from students, researchers, and institutions interested in **learning, applying, and advancing Bayesian methods** in health sciences.
+
+We provide **tutorials, workshops, and open resources** to foster knowledge exchange across statistics, epidemiology, medicine, genomics, and computational sciences.
+
+:::
+
+::: {.callout-tip appearance="simple"}
+### Contact BayesHealth
+
+If you would like to collaborate or learn more, please fill out the form below:
+
+<form id="contactForm">
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" name="name" required style="width: 100%; padding:8px; margin-bottom:10px;"><br>
+
+  <label for="email">Email:</label><br>
+  <input type="email" id="email" name="email" required style="width: 100%; padding:8px; margin-bottom:10px;"><br>
+
+  <label for="notes">Notes / Message:</label><br>
+  <textarea id="notes" name="notes" rows="5" required style="width: 100%; padding:8px; margin-bottom:10px;"></textarea><br>
+
+  <button type="submit" style="padding:10px 20px; background-color:#1f4e79; color:white; border:none; border-radius:6px; cursor:pointer;">Submit</button>
+</form>
+
+<p id="response" style="margin-top:10px; color:#2c6e91;"></p>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e){
+  e.preventDefault();
+
+  // Get form values
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const notes = document.getElementById('notes').value.trim();
+
+  if(name && email && notes){
+    // Combine into a CSV-style row
+    const row = `"${name}","${email}","${notes}"\n`;
+
+    // Save to a file locally (trigger download)
+    const blob = new Blob([row], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'bayeshealth_contacts.txt';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+
+    document.getElementById('response').innerText = "Thank you! Your submission has been saved.";
+    document.getElementById('contactForm').reset();
+  } else {
+    document.getElementById('response').innerText = "Please fill in all fields.";
+  }
+});
+</script>
+:::

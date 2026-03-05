@@ -1,0 +1,27 @@
+project:
+  type: website
+
+website:
+  title: "BayesHealth"
+
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: research.qmd
+        text: Research Wings
+      - href: people.qmd
+        text: People
+      - href: publications.qmd
+        text: Publications
+      - href: events.qmd
+        text: Events
+    right:
+      - icon: github
+        href: https://github.com/
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
