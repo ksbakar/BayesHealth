@@ -149,44 +149,46 @@ If you would like to collaborate or learn more, please fill out the form below:
 
 <form id="contactForm">
   <label for="name">Name:</label><br>
-  <input type="text" id="name" name="name" required style="width: 100%; padding:8px; margin-bottom:10px;"><br>
+  <input type="text" id="name" name="name" required style="width:100%; padding:8px; margin-bottom:10px;"><br>
 
   <label for="email">Email:</label><br>
-  <input type="email" id="email" name="email" required style="width: 100%; padding:8px; margin-bottom:10px;"><br>
+  <input type="email" id="email" name="email" required style="width:100%; padding:8px; margin-bottom:10px;"><br>
 
   <label for="notes">Notes / Message:</label><br>
-  <textarea id="notes" name="notes" rows="5" required style="width: 100%; padding:8px; margin-bottom:10px;"></textarea><br>
+  <textarea id="notes" name="notes" rows="5" required style="width:100%; padding:8px; margin-bottom:10px;"></textarea><br>
 
-  <button type="submit" style="padding:10px 20px; background-color:#1f4e79; color:white; border:none; border-radius:6px; cursor:pointer;">Submit</button>
+  <button type="submit" style="padding:10px 20px; background-color:#1f4e79; color:white; border:none; border-radius:6px; cursor:pointer;">
+    Submit
+  </button>
 </form>
 
 <p id="response" style="margin-top:10px; color:#2c6e91;"></p>
 
 <script>
-const endpoint = "https://script.google.com/macros/s/AKfycbzsogEWP4Rz50YB2qK8hrmg19sTCtpPQeV3Mxg0wMJ5twdRoAB9z_d1NaSxdAK4Qxzy/exec";
+const endpoint = "https://script.google.com/macros/s/AKfycbxzmgw2JS9xGJlviZSBP5-37dHDwx6TaL0Ch-Oi5UfQUWzOfliNFR_CAIAWJk1HCB7R/exec";
 
-document.getElementById('contactForm').addEventListener('submit', async function(e){
+document.getElementById("contactForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
-  const data = {
-    name: document.getElementById('name').value,
-    email: document.getElementById('email').value,
-    notes: document.getElementById('notes').value
-  };
+  const formData = new FormData();
+  formData.append("name", document.getElementById("name").value);
+  formData.append("email", document.getElementById("email").value);
+  formData.append("notes", document.getElementById("notes").value);
 
-  const res = await fetch(endpoint, {
-    method: 'POST',
-    body: JSON.stringify(data),
-    headers: {"Content-Type": "application/json"}
+  fetch(endpoint, {
+    method: "POST",
+    body: formData
+  })
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("response").innerText =
+      "Thank you! Your message has been sent.";
+    document.getElementById("contactForm").reset();
+  })
+  .catch(error => {
+    document.getElementById("response").innerText =
+      "Error submitting form. Please try again.";
   });
-
-  if(res.ok){
-    document.getElementById('response').innerText = "Thank you! Your message has been sent.";
-    document.getElementById('contactForm').reset();
-  } else {
-    document.getElementById('response').innerText = "Something went wrong.";
-  }
 });
 </script>
-
 :::
