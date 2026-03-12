@@ -245,30 +245,39 @@ Submit
 <p id="response" style="margin-top:10px; color:#2c6e91;">
 </p>
 <script>
-const endpoint = "https://script.google.com/macros/s/AKfycbxzmgw2JS9xGJlviZSBP5-37dHDwx6TaL0Ch-Oi5UfQUWzOfliNFR_CAIAWJk1HCB7R/exec";
+const endpoint = "https://green-queen-6fca.shuvo-bakar.workers.dev";
 
 document.getElementById("contactForm").addEventListener("submit", function(e) {
-  e.preventDefault();
 
-  const formData = new FormData();
-  formData.append("name", document.getElementById("name").value);
-  formData.append("email", document.getElementById("email").value);
-  formData.append("notes", document.getElementById("notes").value);
+  e.preventDefault();
 
   fetch(endpoint, {
     method: "POST",
-    body: formData
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      notes: document.getElementById("notes").value
+    })
   })
-  .then(response => response.text())
+  .then(res => res.json())
   .then(data => {
+
     document.getElementById("response").innerText =
       "Thank you! Your message has been sent.";
+
     document.getElementById("contactForm").reset();
+
   })
   .catch(error => {
+
     document.getElementById("response").innerText =
-      "Error submitting form. Please try again.";
+      "Submission failed. Please try again.";
+
   });
+
 });
 </script>
 </div>
