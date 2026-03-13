@@ -232,54 +232,19 @@ We aim to <strong>demystify Bayesian approaches</strong> and provide a platform 
 </div>
 <div class="callout-body-container callout-body">
 <p>If you would like to collaborate or learn more, please fill out the form below:</p>
-<form id="contactForm">
-<p><label for="name">Name:</label><br> <input type="text" id="name" name="name" required="" style="width:100%; padding:8px; margin-bottom:10px;"><br></p>
-<p><label for="email">Email:</label><br> <input type="email" id="email" name="email" required="" style="width:100%; padding:8px; margin-bottom:10px;"><br></p>
-<label for="notes">Notes / Message:</label><br>
-<textarea id="notes" name="notes" rows="5" required="" style="width:100%; padding:8px; margin-bottom:10px;"></textarea>
-<p><br></p>
-<button type="submit" style="padding:10px 20px; background-color:#1f4e79; color:white; border:none; border-radius:6px; cursor:pointer;">
-Submit
+<h3 class="anchored">
+Contact BayesHealth
+</h3>
+<form action="https://formspree.io/f/mreykoop" method="POST">
+<p><label>Name</label><br> <input type="text" name="name" required="" style="width:100%; padding:8px;"><br><br></p>
+<p><label>Email</label><br> <input type="email" name="email" required="" style="width:100%; padding:8px;"><br><br></p>
+<label>Message</label><br>
+<textarea name="message" rows="5" required="" style="width:100%; padding:8px;"></textarea>
+<p><br><br></p>
+<button type="submit" style="padding:10px 20px; background:#1f4e79; color:white; border:none; border-radius:6px;">
+Send Message
 </button>
 </form>
-<p id="response" style="margin-top:10px; color:#2c6e91;">
-</p>
-<script>
-const endpoint = "https://green-queen-6fca.shuvo-bakar.workers.dev";
-
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-
-  e.preventDefault();
-
-  fetch(endpoint, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      name: document.getElementById("name").value,
-      email: document.getElementById("email").value,
-      notes: document.getElementById("notes").value
-    })
-  })
-  .then(res => res.json())
-  .then(data => {
-
-    document.getElementById("response").innerText =
-      "Thank you! Your message has been sent.";
-
-    document.getElementById("contactForm").reset();
-
-  })
-  .catch(error => {
-
-    document.getElementById("response").innerText =
-      "Submission failed. Please try again.";
-
-  });
-
-});
-</script>
 </div>
 </div>
 </section>
