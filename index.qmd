@@ -16,7 +16,7 @@ format:
 A collaborative hub advancing **Bayesian methods for healthcare, biomedical research, and public health**.  
 Connecting researchers, statisticians, clinicians, and students to **learn, collaborate, and apply modern Bayesian strategies**.
 
-[Explore Methods & Research Wings](#research-wings){.btn-primary}
+[Methods & Research Wings](#research-wings){.btn-primary}
 :::
 
 ---
@@ -26,11 +26,11 @@ Connecting researchers, statisticians, clinicians, and students to **learn, coll
 ::: {.callout-important appearance="simple"}
 
 **BayesHealth** is a collaborative hub focused on **Bayesian statistical methodology and data-driven health research**.  
-We aim to **demystify Bayesian approaches** and provide a platform for sharing **tools, tutorials, and research insights**.
+We aim to make Bayesian approaches easier to understand and provide a platform for sharing tools, tutorials, and research insights.
 
 Bayesian methods allow researchers to:
 
-- Combine **prior knowledge with data** in a principled way  
+- Combine **prior knowledge with data** in a meaningful way  
 - Quantify uncertainty and **make probabilistic predictions**  
 - Build **hierarchical, multilevel, and network models**  
 - Perform **adaptive and sequential analyses** for efficient decision-making  
@@ -44,33 +44,48 @@ Our goal is to create a **community for learning, collaboration, and innovation*
 ## Our Mission
 
 - Communicate and **promote Bayesian methodology** for health research  
-- Provide **training, tutorials, and resources** for students and professionals  
 - Foster **collaboration across statistics, epidemiology, medicine, and genomics**  
+- Provide **training, tutorials, and resources** for students and professionals  
 - Showcase **methodological innovations and best practices**  
 
 ---
 
 ## Research Wings {#research-wings}
 
-BayesHealth organizes its research into **four integrated wings**, each focused on a major domain in health sciences where Bayesian methods provide transformative insights.
+BayesHealth organizes its research into **five integrated wings**, each focused on a major domain in health sciences where Bayesian methods provide transformative insights.
 
 ::: {.grid}
 
 ::: {.g-col-12 .g-col-md-6}
 
 ::: {.callout-tip}
-### Bayesian Epidemiology & Global Health
+### Bayesian Epidemiology & Public Health
 
-Focuses on **population and public health challenges**, disease dynamics, and global health policy using Bayesian approaches.
+Focuses on **population-level health patterns, infectious disease dynamics, environmental health and health policy evaluation*** using Bayesian approaches.
 
 **Key topics**
 
-- Spatiotemporal modeling of infectious diseases  
-- Outbreak detection and epidemic forecasting  
-- Cohort studies and survival/time-to-event modeling  
-- Population health risk estimation across regions  
-- Health policy evaluation, resource allocation, and intervention planning  
-- Hierarchical modeling for multi-region/global comparisons
+- Population health risk estimation across regions
+- Surveillance systems and early warning models
+- Hierarchical modeling for multi-region or global comparisons
+- Spatiotemporal modeling of infectious diseases
+
+:::
+:::
+
+::: {.g-col-12 .g-col-md-6}
+
+::: {.callout-tip}
+### Bayesian Chronic Disease & Longitudinal Health
+
+Focuses on **long-term disease progression, chronic condition risk, and prevention strategies** using Bayesian approaches.
+
+**Key topics**
+
+- Longitudinal and cohort studies for chronic disease progression
+- Survival and time-to-event modeling for long-term outcomes
+- Multimorbidity and comorbidity modeling
+- Patient-level disease trajectory modeling
 
 :::
 :::
@@ -84,10 +99,9 @@ Focuses on **designing, monitoring, and analyzing clinical research** to improve
 
 **Key topics**
 
-- Adaptive and seamless trial designs  
-- Bayesian dose-finding and platform trials  
-- Interim monitoring, early stopping, and posterior predictive checks  
-- Survival analysis and time-to-event endpoints  
+- Bayesian dose-finding and platform trials 
+- Adaptive trial designs, interim monitoring, and early stopping
+- Bayesian clustered randomized trials
 - Probabilistic benefit–risk assessment for treatments
 
 :::
@@ -103,7 +117,6 @@ Focuses on **decision-making under uncertainty**, supporting cost-effective heal
 **Key topics**
 
 - Probabilistic cost-effectiveness analysis  
-- Health technology assessment (HTA)  
 - Value-of-information and risk-benefit modeling  
 - Scenario simulations for healthcare strategies  
 - Resource allocation and policy planning
@@ -124,7 +137,7 @@ Focuses on **analyzing complex biological data** to enable personalized medicine
 - Probabilistic gene and protein network modeling  
 - Hierarchical integration of multi-omics datasets  
 - Biomarker discovery and patient stratification  
-- Predictive modeling for individualized treatment and outcomes
+
 
 :::
 :::
